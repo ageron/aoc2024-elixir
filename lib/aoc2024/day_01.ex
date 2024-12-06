@@ -1,20 +1,6 @@
 defmodule Aoc2024.Day01 do
   def parse(input) do
-    numbers =
-      input
-      |> String.split("\n", trim: true)
-      |> Enum.map(fn line ->
-        line
-        |> String.split(~r/\s+/)
-        |> Enum.map(fn int_str ->
-          case int_str |> Integer.parse() do
-            {int, ""} -> int
-            _ -> raise "Invalid integer #{int_str}"
-          end
-        end)
-      end)
-
-    numbers
+    Aoc2024.Utils.parse_rows_of_integers(input)
     |> Enum.map(&List.to_tuple/1)
     |> Enum.unzip()
   end
