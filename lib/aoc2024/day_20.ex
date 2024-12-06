@@ -3,11 +3,11 @@ defmodule Aoc2024.Day20 do
     input |> String.split("\n", trim: true)
   end
 
-  def part1(lines) do
-    length(lines)
+  def part1(_lines) do
+    :todo1
   end
 
-  def part2(lines) do
-    length(lines)
+  def part2(_lines) do
+    :todo2
   end
 end
