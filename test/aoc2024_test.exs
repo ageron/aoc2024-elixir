@@ -51,4 +51,23 @@ defmodule Aoc2024Test do
     input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)\n+mul(32,64](mul(11,8)undo()?mul(8,5))"
     assert Aoc2024.Day03.part2(input) == 48
   end
+
+  test "Day 4" do
+    input = """
+    MMMSXXMASM
+    MSAMXMSMSA
+    AMXSXMAAMM
+    MSAMASMSMX
+    XMASAMXAMM
+    XXAMMXXAMA
+    SMSMSASXSS
+    SAXAMASAAA
+    MAMMMXMMMM
+    MXMXAXMASX
+    """
+
+    parsed_input = Aoc2024.Day04.parse(input)
+    assert Aoc2024.Day04.part1(parsed_input) == 18
+    assert Aoc2024.Day04.part2(parsed_input) == 9
+  end
 end
