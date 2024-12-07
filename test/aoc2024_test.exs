@@ -31,4 +31,24 @@ defmodule Aoc2024Test do
     assert Aoc2024.Day02.part1(parsed_input) == 2
     assert Aoc2024.Day02.part2(parsed_input) == 4
   end
+
+  test "Day 3 - part 1" do
+    input = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
+    assert Aoc2024.Day03.part1(input) == 161
+  end
+
+  test "Day 3 - part 2" do
+    input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+    assert Aoc2024.Day03.part2(input) == 48
+  end
+
+  test "Day 3 - part 2 – end with don't" do
+    input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)un?mul(8,5))"
+    assert Aoc2024.Day03.part2(input) == 8
+  end
+
+  test "Day 3 - part 2 – support newlines within don't()...do() blocks" do
+    input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)\n+mul(32,64](mul(11,8)undo()?mul(8,5))"
+    assert Aoc2024.Day03.part2(input) == 48
+  end
 end
